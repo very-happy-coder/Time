@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Time.js</title>
+</head>
+<body>
+  <p>The time:</p>
+  <p id="time"></p>
+</body>
+<script src="time.js"></script>
+<script>
+  Time.stopwatch.start(function() {
+    var curr = Time.current();
+    document.getElementById("time").textContent = curr.hour + "hrs " + curr.minute + "mins " + curr.second + "secs " + curr.millisecond + "milli";
+  }, 1);
+</script>
+</html>
