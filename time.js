@@ -3,12 +3,14 @@ var Time = {
   stopwatch: {},
   timer: {}
 };
-Time.current.prototype.hour = function() {
+Time.current.prototype.hour = function(format) {
   var time = new Date.getHours();
-  if (time <= 12) {
-    time = time + "AM";
-  } else {
-    time = (time - 12) + "PM";
+  if (format === "am/pm") {
+    if (time <= 12) {
+      time = time + "AM";
+    } else {
+      time = (time - 12) + "PM";
+    }
   }
   return time;
 };
